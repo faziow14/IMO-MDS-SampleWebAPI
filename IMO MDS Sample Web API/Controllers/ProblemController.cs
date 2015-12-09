@@ -20,14 +20,14 @@ namespace IMO_MDS_Sample_Web_API.Controllers
                 new Problem(4, "Migrane")
            }
        );
-​
+
         [HttpGet]
         // GET api/problem
         public IEnumerable<Problem> GetAllProblems()
         {
             return problems;
         }
-​
+
         [HttpGet]
         // GET api/problem/1
         public IHttpActionResult GetProbem(int id)
@@ -39,7 +39,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             }
             return Ok<Problem>(problem);
         }
-​
+
         [HttpPost]
         // POST api/problem
         public IHttpActionResult PostProblem([FromBody]string name)
@@ -52,7 +52,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             problems.Add(new Problem(newId, name));
             return Ok("SUCCESS:  Added " + name + " (id " + newId + ")");
         }
-​
+
         [HttpPut]
         // PUT api/problem/5
         public IHttpActionResult PutProblem(int id, [FromBody]string name)
@@ -70,7 +70,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             problems[id].Name = name;
             return Ok("SUCCESS:  Updated '" + oldName + "' to '" + name + "' (id " + id + ")");
         }
-​
+
         [HttpDelete]
         // DELETE api/problem/1
         public IHttpActionResult DeleteProblem(int id)

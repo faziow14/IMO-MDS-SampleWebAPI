@@ -12,7 +12,7 @@ namespace IMO_MDS_Sample_Web_API.Models
         public int Age { get; set; }
         public string Gender { get; set; }
         public string PhoneNumber { get; set; }
-​
+
         public List<Medication> medications;
         public List<Allergy> allergies;
         public List<Problem> problems;
@@ -35,17 +35,17 @@ namespace IMO_MDS_Sample_Web_API.Models
             allergies = new List<Allergy>();
             problems = new List<Problem>();
         }
-​
+
         public void addMedication(Medication newMedication)
         {
             medications.Add(newMedication);
         }
-​
+
         public void addAllergy(Allergy newAllergy)
         {
             allergies.Add(newAllergy);
         }
-​
+
         public void addProblem(Problem newProblem)
         {
             problems.Add(newProblem);

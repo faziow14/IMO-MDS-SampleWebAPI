@@ -36,14 +36,14 @@ namespace IMO_MDS_Sample_Web_API.Controllers
         patients[3].addMedication("Prevacid");
         patients[3].addAllergy("Sugar");
         patients[3].addProblem("Stomach"); */
-​​​
+
         [HttpGet]
         // GET api/patient
         public IEnumerable<Patient> GetAllPatients()
         {
             return patients;
         }
-​
+
         [HttpGet]
         // GET api/patient/1
         public IHttpActionResult GetPatient(string _name)
@@ -68,7 +68,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             patients.Add(new Patient(newId, name, 0, null, null));
             return Ok("SUCCESS:  Added " + name + " (id " + newId + ")");
         }
-​
+
         [HttpPut]
         // PUT api/patient/5
         public IHttpActionResult PutAllergy(int id, [FromBody]string name)
@@ -86,7 +86,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             patients[id].Name = name;
             return Ok("SUCCESS:  Updated '" + oldName + "' to '" + name + "' (id " + id + ")");
         }
-​
+
         [HttpDelete]
         // DELETE api/medication/1
         public IHttpActionResult DeleteAllergy(int id)

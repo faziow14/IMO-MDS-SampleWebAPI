@@ -14,20 +14,20 @@ namespace IMO_MDS_Sample_Web_API.Controllers
        (
            new Allergy[]
            {
-                new Allergy(1,"penut"),
-                new Allergy(2, "egg"),
-                new Allergy(3, "fish"),
-                new Allergy(4, "pollen")
+                new Allergy(1,"Peanuts"),
+                new Allergy(2, "Eggs"),
+                new Allergy(3, "Shell Fish"),
+                new Allergy(4, "Pollen")
            }
        );
-​
+
         [HttpGet]
         // GET api/allergy
         public IEnumerable<Allergy> GetAllAllergies()
         {
             return allergies;
         }
-​
+
         [HttpGet]
         // GET api/allergy/1
         public IHttpActionResult GetAllergy(int id)
@@ -39,7 +39,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             }
             return Ok<Allergy>(allergy);
         }
-​
+
         [HttpPost]
         // POST api/allergy
         public IHttpActionResult PostAllergy([FromBody]string name)
@@ -52,7 +52,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             allergies.Add(new Allergy(newId, name));
             return Ok("SUCCESS:  Added " + name + " (id " + newId + ")");
         }
-​
+
         [HttpPut]
         // PUT api/medication/5
         public IHttpActionResult PutAllergy(int id, [FromBody]string name)
@@ -70,7 +70,7 @@ namespace IMO_MDS_Sample_Web_API.Controllers
             allergies[id].Name = name;
             return Ok("SUCCESS:  Updated '" + oldName + "' to '" + name + "' (id " + id + ")");
         }
-​
+
         [HttpDelete]
         // DELETE api/medication/1
         public IHttpActionResult DeleteAllergy(int id)
